@@ -1,0 +1,166 @@
+@import '../containers/media.scss';
+
+@mixin h1 {
+    font-size: 20rem;
+    @include mobile {
+        font-size: 7.5rem;
+    }
+}
+
+@mixin h2 {
+    font-size: 8rem;
+    @include mobile {
+        font-size: 6rem;
+    }
+}
+
+@mixin h3 {
+    font-size: 5rem;
+    @include mobile {
+        font-size: 3.75rem;
+    }
+}
+
+@mixin h4 {
+    font-size: 2rem;
+    @include mobile {
+        font-size: 3.5rem;
+    }
+}
+
+@mixin h5 {
+    font-size: 1.75rem;
+    @include mobile {
+        font-size: 3rem;
+    }
+}
+
+@mixin button {
+    font-size: 1.5rem;
+    @include mobile {
+        font-size: 2rem;
+    }
+}
+
+@mixin p {
+    font-size: 1.5rem;
+    @include mobile {
+        font-size: 2rem;
+    }
+}
+
+@mixin description {
+    font-size: 1rem;
+    @include mobile {
+        font-size: 1.5rem;
+    }
+}
+
+@mixin button_bold_text {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.03rem;
+}
+
+@mixin p_other_pages {
+    @include p();
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.03rem;
+    @include mobile {
+        @include description();
+    }
+}
+
+//Flex JF = Center AI = Center
+
+@mixin flex_jf-Center_ai-Center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+//Flex JF = Space Between, AI = Center
+
+@mixin flex_js-SpaceBetween_ai-Center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// Flex JF = Start, AI = Center
+
+@mixin flex_js-Start_ai-Center {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+@mixin flex_js-Start_ai-Start_column {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+@mixin flex_js-SpaceBetween_ai-Start_column {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+
+@mixin flex_column {
+    display: flex;
+    flex-direction: column;
+}
+
+//  Size
+
+@mixin size_request {
+    width: 54.125rem;
+    padding: 2rem;
+    @include mobile {
+        width: 100%;
+        padding: 2.5rem 3rem;
+    }
+}
+
+// Border radius = 1000px
+
+@mixin b_radius_1000 {
+    border-radius: 62.5rem;
+}
+
+// Gap
+
+@mixin gap_custom($gap, $mobile_gap) {
+    display: flex;
+    gap: $gap;
+    @include mobile {
+        display: flex;
+        gap: $mobile_gap;
+    }
+}
+
+@mixin gap_column($gap, $mobile_gap) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+        gap: $mobile_gap;
+    }
+}
+
+// Position
+
+@mixin pos_center {
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+}

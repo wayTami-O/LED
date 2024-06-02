@@ -1,0 +1,205 @@
+.about-block {
+    width: 100%;
+    .container_desk {
+        @include grid();
+        margin-top: 4rem;
+        @include mobile {
+            display: none;
+        }
+        div {
+            position: relative;
+            height: 32.5rem;
+            background-color: $bg-terteriary;
+            border-radius: 2rem;
+            padding: 2rem;
+            //          Style for block 
+            &:nth-child(2) {
+                background-color: $bg-primary;
+                border: 2px solid $bg-inverse-transparent-20;
+                .container_icon {
+                    background-color: $bg-terteriary;
+                }
+            }
+            &:nth-child(3) {
+                background-color: $bg-primary-subdued-80;
+            }
+            &:nth-child(4) {
+                background-color: $bg-inverse;
+                .container_icon {
+                    background-color: $bg-primary;
+                }
+            }
+            //          Others content
+            h4 {
+                @include h4();
+                color: $bg-primary;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 100%;
+                letter-spacing: -0.04rem;
+            }
+            p {
+                @include p();
+                margin-top: 1.25rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 120%;
+                letter-spacing: -0.03rem;
+            }
+            .inserve_text {
+                color: $bg-inverse;
+            }
+            .container_icon {
+                width: 8rem;
+                height: 8rem;
+                background-color: $bg-inverse;
+                border-radius: 100%;
+                @include flex_jf-Center_ai-Center();
+                position: absolute;
+                right: 2rem;
+                bottom: 2rem;
+            }
+        }
+    }
+    .container_grid {
+        display: none;
+        margin-top: 4rem;
+        @include mobile {
+            display: flex;
+            // display: grid;
+            // grid-template-columns: repeat(4, 35.75rem);
+            //overflow: scroll hidden;
+        }
+        .swiper-slide {
+            @include mobile {
+                position: relative;
+                height: 32.5rem;
+                background-color: $bg-terteriary;
+                border-radius: 2rem;
+                padding: 2rem;
+                width: 35.75rem;
+                padding: 1.5rem;
+            }
+            //          Style for block 
+            &:nth-child(2) {
+                background-color: $bg-primary;
+                border: 2px solid $bg-inverse-transparent-20;
+                .container_icon, .mobile_container_icon {
+                    background-color: $bg-terteriary;
+                }
+            }
+            &:nth-child(3) {
+                background-color: $bg-primary-subdued-80;
+            }
+            &:nth-child(4) {
+                background-color: $bg-inverse;
+                .container_icon, .mobile_container_icon {
+                    background-color: $bg-primary;
+                }
+            }
+            //          Others content
+            .mobile_container_icon {
+                display: none;
+                @include mobile {
+                    @include flex_jf-Center_ai-Center();
+                    width: 8rem;
+                    height: 8rem;
+                    padding: 1.25rem;
+                    background-color: $bg-inverse;
+                    border-radius: 100%;
+                    svg {
+                        width: 5rem;
+                        height: 5rem;
+                    }
+                }
+            }
+            h4 {
+                @include h4();
+                color: $bg-primary;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 100%;
+                letter-spacing: -0.04rem;
+                @include mobile {
+                    @include p();
+                    margin-top: 3rem;
+                }
+            }
+            p {
+                @include p();
+                margin-top: 1.25rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 120%;
+                letter-spacing: -0.03rem;
+                @include mobile {
+                    margin-top: 2rem;
+                }
+            }
+            .inserve_text {
+                color: $bg-inverse;
+            }
+            .container_icon {
+                @include flex_jf-Center_ai-Center();
+                width: 8rem;
+                height: 8rem;
+                background-color: $bg-inverse;
+                border-radius: 100%;
+                position: absolute;
+                right: 2rem;
+                bottom: 2rem;
+                @include mobile {
+                    display: none;
+                    width: 8rem;
+                    height: 8rem;
+                }
+                svg {
+                    width: 5rem;
+                    height: 5rem;
+                }
+            }
+        }
+        .container_swipper {
+            height: 32.5rem;
+            background-color: $bg-terteriary;
+            border-radius: 2rem;
+            padding: 2rem;
+            @include mobile {
+                display: none;
+            }
+        }
+    }
+    .container_arrows_swipper {
+        @include gap_custom(0rem, 1.5rem);
+        display: none;
+        grid-column-gap: 1.5rem;
+        grid-template-columns: 1fr 1fr;
+        @include mobile {
+            display: grid;
+        }
+        .swipper_arrow {
+            @include flex_jf-Center_ai-Center();
+            @include b_radius_1000();
+            cursor: pointer;
+            margin-left: auto;
+            padding: 1rem;
+            background-color: $bg-terteriary;
+            &:nth-child(2) {
+                transform: rotate(180deg);
+                margin-left: 0;
+                margin-right: auto;
+            }
+            &:active {
+                background-color: $bg-inverse;
+                svg {
+                    path {
+                        stroke: $bg-terteriary;
+                    }
+                }
+            }
+        }
+        .swiper-button-disabled {
+            background-color: $bg-primary-subdued-95;
+        }
+    }
+}

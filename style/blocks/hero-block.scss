@@ -1,0 +1,182 @@
+.hero-block {
+    @include flex_jf-Center_ai-Center();
+    width: 100%;
+    height: 67.5rem;
+    background: url('../assets/images/backgrouns/main_background.png') no-repeat center center;
+    background-size: cover;
+    transition: all .3s ease;
+    // Adaptive
+    @include mobile {
+        height: max-content;
+        padding-top: 44rem;
+        padding-bottom: 6rem;
+        align-items: end;
+        background: url('../assets/images/backgrouns/mobile_main_background.png') no-repeat top center;
+        background-size: 100% auto;
+        transition: all .3s ease;
+    }
+    // Other
+    .text_container {
+        width: 100%;
+        max-width: 120rem;
+        h2 {
+            @include h2();
+            color: $bg-inverse;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 90%;
+            letter-spacing: -0.16rem;
+            div {
+                color: $bg-terteriary;
+                width: 100%;
+                display: flex;
+                align-items: end;
+                gap: 2rem;
+                transition: all .3s ease;
+                .container_input {
+                    cursor: pointer;
+                    position: relative;
+                    width: 10rem;
+                    height: 5rem;
+                    border-radius: 4rem;
+                    background-color: $bg-primary-subdued-40;
+                    padding: 0 .5rem;
+                    // &::before {
+                    //     position: absolute;
+                    //     left: 0.5rem;
+                    //     top: 0.5rem;
+                    //     content: '';
+                    //     width: 4rem;
+                    //     height: 4rem;
+                    //     background-color: $bg-primary-subdued-40;
+                    //     border-radius: 100%;
+                    //     transition: left .1s ease-in;
+                    // }
+                    .circle {
+                        position: absolute;
+                        left: 0.5rem;
+                        top: 0.5rem;
+                        width: 4rem;
+                        height: 4rem;
+                        background-color: $bg-primary-subdued-80;
+                        border-radius: 100%;
+                        transition: left .1s ease-in;
+                    }
+                    &:hover {
+                        //background-color: $bg-inverse;
+                        //transition: all .3s ease-in;
+                        // &::before {
+                        //     position: absolute;
+                        //     right: 0;
+                        //     top: 0.5rem;
+                        //     background-color: $bg-terteriary;
+                        //     animation: sitch_anim .4s ease forwards;
+                        //     animation-direction: alternate;
+                        //     transition: all .4s ease;
+                        // }
+                    }
+                }
+            }
+        }
+        p {
+            @include p();
+            color: $bg-inverse;
+            margin-top: 2rem;
+            @include mobile {
+                margin-top: 3rem;
+            } 
+        }
+        button {
+            @include button();
+            @include button_bold_text();
+            color: $bg-primary;
+            background-color: $bg-terteriary;
+            border: 0.188rem solid $bg-terteriary;
+            //Adaptive Style
+            padding: 1.813rem 11.563rem;
+            margin-top: 4rem;
+            margin-bottom: 6rem;
+            border-radius: 62.5rem;
+            @include mobile {
+                width: 100%;
+                @include b_radius_1000();
+                padding: 3rem 0;
+                margin-top: 6rem;
+                margin-bottom: 0rem;
+            }
+            //Animete
+            transition: all .1s ease;
+            &:hover {
+                background-color: $bg-inverse;
+                border: 0.188rem solid $bg-terteriary;
+                color: $bg-terteriary;
+            }
+        }
+    }
+}
+
+// Active
+
+.container_input_active {
+    background-color: $bg-inverse !important;
+    transition: all 150ms ease;
+}
+
+.non_active_circle {
+    animation: inverse_switch_anim .4s ease alternate-reverse;
+}
+
+.active_circle {
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    background-color: $bg-terteriary !important;
+    animation: sitch_anim .4s ease forwards;
+    animation-direction: alternate;
+    transition: all .4s ease;
+}
+
+.hero-block_bg_non {
+    background: url('../assets/images/backgrouns/off_main_background.png') no-repeat center center;
+    background-size: cover;
+    @include mobile {
+        background: url('../assets/images/backgrouns/off_mobile_main_background.png') no-repeat top center;
+        background-size: 100% auto;
+    }
+}
+
+.active_text_non {
+    color: $bg-primary-subdued-40 !important;
+}
+
+// Animation 
+
+@keyframes inverse_switch_anim {
+    0% {
+        left: 0.5rem;
+    }
+    25% {
+        left: 0.1rem;
+    }
+    75% {
+        left: 5.9rem;
+    }
+    100% {
+        left: 5.5rem;
+    }
+}
+
+@keyframes sitch_anim {
+    0% {
+        left: 0.5rem;
+    }
+    25% {
+        left: 0.1rem;
+    }
+    75% {
+        left: 5.9rem;
+    }
+    100% {
+        left: 5.5rem;
+    }
+}

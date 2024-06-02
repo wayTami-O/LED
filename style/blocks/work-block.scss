@@ -1,0 +1,141 @@
+.how_we_work-block {
+    width: 100%;
+    .container_work_mobile {
+        display: none;
+        @include mobile {
+            display: flex;
+            .swiper-wrapper {
+                .swiper-slide {
+                    min-height: min-content !important;
+                    height: initial;
+                }
+                .item_work {
+                    //height: 36.375rem;
+                    @include flex_js-SpaceBetween_ai-Start_column();
+                    //min-height: min-content !important;
+                    //height: min-content !important;
+                    padding: 2rem;
+                    border-radius: 2rem;
+                    .top_text {
+                        @include gap_column(0rem, 2rem);
+                        h4 {
+                            @include h5();
+                        }
+                        p {
+                            @include p();
+                        }
+                    }
+                    h2 {
+                        @include h1();
+                        width: min-content;
+                        height: min-content;
+                        margin-left: auto; 
+                    }
+                }
+            }
+        }
+        
+    }
+    .container_work {
+        @include flex_column();
+        @include gap_custom(1.125rem, 2rem);
+        //display: none;
+        @include mobile {
+            display: none;
+            //display: flex;
+            // display: grid;
+            // grid-template-columns: repeat(6, 31.25rem);
+        }
+        .item_work {
+            width: 100%;
+            height: 10.5rem;
+            border-radius: 2rem;
+            padding: 0rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-gap: 3.25rem;
+            // Other
+            h4 {
+                @include h4();
+                
+                margin-top: 2rem;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 100%;
+                letter-spacing: -0.04rem;
+                width: 90%;
+                // @include mobile {
+                //     @include h5();
+                //     width: 100%;
+                //     font-style: normal;
+                //     font-weight: 500;
+                //     line-height: 100%;
+                //     letter-spacing: -0.06rem;
+                // }
+            }
+            p {
+                @include p();
+                margin-top: 2rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 120%; 
+                letter-spacing: -0.03rem;
+                // @include mobile {
+                //     margin-top: 0rem;
+                //     width: 100%;
+                //     font-style: normal;
+                //     font-weight: 400;
+                //     line-height: 120%; /* 19.2px */
+                //     letter-spacing: -0.04rem;
+                // }
+            }
+            h2 {
+                @include h2();
+                display: flex;
+                justify-content: end;
+                align-items: end;
+                // @include mobile {
+                //     margin-top: auto;
+                //     width: 100%;
+                // }
+            }
+        }
+    }
+    .container_arrows_swipper {
+        @include gap_custom(0rem, 1.5rem);
+        display: none;
+        grid-column-gap: 1.5rem;
+        grid-template-columns: 1fr 1fr;
+        @include mobile {
+            display: grid;
+        }
+        .swipper_arrow {
+            @include flex_jf-Center_ai-Center();
+            @include b_radius_1000();
+            margin-left: auto;
+            padding: 1rem;
+            background-color: $bg-terteriary;
+            &:nth-child(2) {
+                transform: rotate(180deg);
+                margin-left: 0;
+                margin-right: auto;
+            }
+            &:active {
+                background-color: $bg-inverse;
+                svg {
+                    path {
+                        stroke: $bg-terteriary;
+                    }
+                }
+            }
+        }
+        .swiper-button-disabled {
+            background-color: $bg-primary-subdued-95;
+            svg {
+                path {
+                    fill: $bg-primary-transparent-40;
+                }
+            }
+        }
+    }
+}

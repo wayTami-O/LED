@@ -1,0 +1,25 @@
+@import './404.scss';
+@import './policity.scss';
+@import './successful.scss';
+
+.button_other-pages {
+    @include button();
+    @include button_bold_text();
+    @include b_radius_1000();
+    padding: 1.813rem 13.844rem;
+    color: $bg-terteriary;
+    background-color: transparent;
+    border: 0.188rem solid $bg-terteriary;
+    @include mobile {
+        @include pos_center();
+        @include flex_jf-Center_ai-Center();
+        padding: 0rem;
+        width: 41.875rem;
+        height: 7.25rem;
+        position: fixed;
+        bottom: 8rem;
+    }
+    &:hover {
+        background-color: $bg-inverse;
+    }
+}

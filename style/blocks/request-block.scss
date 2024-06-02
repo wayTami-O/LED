@@ -1,0 +1,72 @@
+.request-block {
+    width: 100%;
+    @include flex_column();
+    @include flex_jf-Center_ai-Center();
+    .container_request {
+        @include flex_column();
+        @include flex_jf-Center_ai-Center();
+        p {
+            @include p();
+            width: 100%;
+            text-align: center;
+            margin-top: 2rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%;
+            letter-spacing: -0.03rem;
+            @include mobile {
+                //max-width: 41.875rem;
+                width: 100%;
+            }
+        }
+        form {
+            @include flex_column();
+            align-items: center;
+            width: 100%;
+            gap: 1.25rem;
+            margin-top: 4rem;
+            // Adaptive
+            @include mobile {
+
+            }
+            // Other
+            input {
+                @include p();
+                @include size_request();
+                gap: 1.25rem;
+                border-radius: 62.5rem;
+                color: $bg-terteriary;
+                border: 0.125rem solid transparent;
+                &:hover {
+                    border: 0.125rem solid $bg-primary-subdued-20;
+                }
+                &:focus {
+                    border: 0.125rem solid $bg-terteriary;
+                }
+            }
+        }
+        .description {
+            @include description();
+            width: 100%;
+            text-align: center;
+            color: $bg-inverse-transparent-80;
+            margin-top: 3rem;
+        }
+        button {
+            @include size_request();
+            @include b_radius_1000();
+            @include button();
+            @include button_bold_text();
+            margin-top: 2rem;
+            color: $bg-primary;
+            background-color: $bg-terteriary;
+            border: 0.188rem solid transparent;
+            transition: all .1s ease;
+            &:hover {
+                background-color: $bg-inverse;
+                color: $bg-terteriary;
+                border: 0.188rem solid $bg-terteriary;
+            }
+        }
+    }
+}

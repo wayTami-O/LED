@@ -1,0 +1,24 @@
+.container_content_successfully {
+    @include gap_column(4rem, 0rem);
+    .container_text_successfully {
+        @include flex_jf-Center_ai-Center();
+        @include gap_column(2rem, 1.5rem);
+        h2 {
+            @include h2();
+            color: $bg-terteriary;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 80%;
+            letter-spacing: -0.16rem;
+        }
+        p {
+            @include p();
+            color: $bg-terteriary;
+            text-align: center;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%;
+            letter-spacing: -0.03rem;
+        }
+    } 
+}

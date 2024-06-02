@@ -1,0 +1,39 @@
+.portfolio-block {
+    width: 100%;
+    .header_portfolio {
+        height: 20.188rem;
+        background-color: $bg-primary-subdued-95;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 3rem 4rem 0 1rem;
+        border-radius: 2rem;
+        overflow: hidden;
+        // Adaptive
+        @include mobile {
+            height: 9.25rem;
+            padding: 3.5rem 0.5rem 0;
+        }
+        // Other
+        h1 {
+            @include h1();
+            @include mobile {
+                font-size: 7.5rem;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 80%;
+                letter-spacing: -0.15rem;
+            }
+            //padding: 3rem 4rem 0 1rem;
+        }
+        h2 {
+            @include h2();
+            @include mobile {
+                font-size: 3.5rem;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 80%; 
+                letter-spacing: -0.07rem;
+            }
+        }
+    }
+}

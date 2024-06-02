@@ -1,0 +1,134 @@
+.cookie-block {
+    display: none;
+    @include pos_center();
+    @include b_radius_1000();
+    @include gap_custom(2rem, 0rem);
+    position: fixed;
+    bottom: 3rem;
+    width: 57.5rem;
+    height: 9.563rem;
+    padding: 0 3rem;
+    background-color: $bg-inverse;
+    align-items: center;
+    animation: cookie 1s ease forwards;
+    &.close {
+        animation: close_cookie 2.5s ease forwards;
+        @include mobile {
+            bottom: -200rem;
+            animation: cookie_mobile_close 1.5s ease alternate; 
+        }
+    }
+    p {
+        @include p();
+        width: 50%;
+        color: $bg-primary;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: -0.48px;
+    }
+    button {
+        @include button();
+        @include button_bold_text();
+        @include b_radius_1000();
+        border: 0.188rem solid transparent;
+        background-color: $bg-terteriary;
+        padding: 1.25rem 2rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%;
+        letter-spacing: -0.03rem;
+        transition: all .1s ease;
+        &:hover {
+            background-color: transparent;
+            border: 0.188rem solid $bg-terteriary;
+            color: $bg-terteriary;
+        }
+    }
+    span {
+        @include flex_jf-Center_ai-Center();
+        width: 1.5rem;
+        height: 1.5rem;
+        cursor: pointer;
+    }
+    // Adaptive 
+    @include mobile {
+        ///display: none;
+        bottom: 0rem;
+        height: max-content;
+        width: 100%;
+        border-radius: 0rem;
+        padding: 3rem 2.5rem;
+        display: grid;
+        grid-row-gap: 4rem;
+        grid-template-areas:
+        "A A A B"
+        "C C C C";
+        animation: cookie_mobile 1s ease forwards;
+        p {
+            grid-area: A;
+        }
+        span {
+            grid-area: B;
+            margin-left: auto;
+        }
+        button {
+            grid-area: C;
+            @include button();
+            @include button_bold_text();
+            @include b_radius_1000();
+            margin-left: 1rem;
+            border: 0.188rem solid transparent;
+            background-color: $bg-terteriary;
+            padding: 1.25rem 2rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 120%;
+            letter-spacing: -0.03rem;
+            transition: all .1s ease;
+            &:hover {
+                background-color: transparent;
+                border: 0.188rem solid $bg-terteriary;
+                color: $bg-terteriary;
+            }
+        }
+    }
+}
+
+@keyframes cookie {
+    from {
+        bottom: -200rem;
+    }
+    to {
+        bottom: 3rem;
+    }
+}
+
+@keyframes cookie_mobile {
+    from {
+        bottom: -200rem;
+    }
+    to {
+        bottom: 0rem;
+    }
+}
+
+@keyframes close_cookie {
+    0% {
+        bottom: 3rem;
+    }
+    10% {
+        bottom: 3.6rem;
+    }
+    100% {
+        bottom: -200rem;
+    }
+}
+@keyframes cookie_mobile_close {
+    from {
+        bottom: 0rem;
+    }
+    to {
+        bottom: -200rem;
+    }
+}

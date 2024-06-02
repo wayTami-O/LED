@@ -1,0 +1,139 @@
+@import '../containers/media.scss';
+
+$bg-primary: #272727;
+$bg-inverse: #FFF;
+$bg-terteriary: #FF983F;
+$bg-accent: #FFFFA1;  
+
+$bg-primary-subdued-10: color-mix(in srgb, $bg-primary 10%, $bg-inverse 90%);
+$bg-primary-subdued-20: color-mix(in srgb, $bg-primary 20%, $bg-inverse 80%);
+$bg-primary-subdued-40: color-mix(in srgb, $bg-primary 40%, $bg-inverse 60%);
+$bg-primary-subdued-60: color-mix(in srgb, $bg-primary 60%, $bg-inverse 40%);
+$bg-primary-subdued-80: color-mix(in srgb, $bg-primary 80%, $bg-inverse 20%);
+$bg-primary-subdued-95: color-mix(in srgb, $bg-primary 95%, $bg-inverse 5%);
+
+$bg-primary-transparent-10: rgba(39, 39, 39, 0.1);
+$bg-primary-transparent-20: rgba(39, 39, 39, 0.2);
+$bg-primary-transparent-40: rgba(39, 39, 39, 0.4);
+$bg-primary-transparent-60: rgba(39, 39, 39, 0.6);
+$bg-primary-transparent-80: rgba(39, 39, 39, 0.8);
+$bg-primary-transparent-95: rgba(39, 39, 39, 0.95);
+
+$bg-inverse-transparent-10: rgba(255, 255, 255, 0.1);
+$bg-inverse-transparent-20: rgba(255, 255, 255, 0.2);
+$bg-inverse-transparent-40: rgba(255, 255, 255, 0.40);
+$bg-inverse-transparent-60: rgba(255, 255, 255, 0.60);
+$bg-inverse-transparent-80: rgba(255, 255, 255, 0.80);
+
+$bg-terteriary-subdued-10: color-mix(in srgb, $bg-terteriary 10%, $bg-primary 90%);
+$bg-terteriary-subdued-20: color-mix(in srgb, $bg-terteriary 20%, $bg-primary 80%);
+$bg-terteriary-subdued-40: color-mix(in srgb, $bg-terteriary 40%, $bg-primary 60%);
+$bg-terteriary-subdued-60: color-mix(in srgb, $bg-terteriary 60%, $bg-primary 40%);
+$bg-terteriary-subdued-80: color-mix(in srgb, $bg-terteriary 80%, $bg-primary 20%);
+
+$bg-accent-subdued-10: color-mix(in srgb, $bg-accent 10%, $bg-primary 90%);
+$bg-accent-subdued-20: color-mix(in srgb, $bg-accent 20%, $bg-primary 80%);
+$bg-accent-subdued-40: color-mix(in srgb, $bg-accent 40%, $bg-primary 60%);
+$bg-accent-subdued-60: color-mix(in srgb, $bg-accent 60%, $bg-primary 40%);
+$bg-accent-subdued-80: color-mix(in srgb, $bg-accent 80%, $bg-primary 20%);
+
+.container-p_X {
+    padding-left: 5.25rem;
+    padding-right: 5.25rem;
+    max-width: 120rem;
+    @include mobile {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+}
+
+// Margin Section
+
+.mt-256 {
+    margin-top: 16rem;
+    @include mobile {
+        margin-top: 8rem;
+    }
+}
+
+.mt-128 {
+    margin-top: 8rem;
+    @include mobile {
+        margin-top: 8rem;
+    }
+}
+
+.mt-64 {
+    margin-top: 4rem;
+    @include mobile {
+        margin-top: 5.25rem;
+    }
+}
+
+// Padding
+
+.pt-128 {
+    padding-top: 8rem;
+    @include mobile {
+        padding-top: 8rem;
+    }
+}
+
+.pt-32 {
+    padding-top: 2rem;
+}
+
+// Colors 
+
+.color_primary {
+    color: $bg-primary;
+}
+
+.color_inverse {
+    color: $bg-inverse;
+}
+
+.color-terteriary {
+    color: $bg-terteriary;
+}
+
+
+// BackGrounds 
+
+.bg_primary {
+    background-color: $bg-primary;
+}
+
+.bg-terteriary {
+    background-color: $bg-terteriary;
+}
+
+.bord-inverse-transparent-20 {
+    border: 0.125rem solid $bg-inverse-transparent-20;
+}
+
+.bg-primary-subdued-80 {
+    background-color: $bg-primary-subdued-80;
+}
+
+// IMG Border
+
+.img_border {
+    border-radius: 2rem;
+    @include mobile {
+        border-radius: 2rem;
+    }
+}
+
+// Size and max-widht
+
+.logo {
+    width: 6.25rem;
+    height: 2.063rem;
+    cursor: pointer;
+}
+
+.container_max_1920 {
+    width: 100%;
+    max-width: 120rem;
+}

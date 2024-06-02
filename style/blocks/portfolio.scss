@@ -1,0 +1,36 @@
+.container_portfolio {
+    margin-top: 3rem;
+    position: relative;
+    height: 46.875rem;
+    display: grid;
+    grid-template-columns: 26.438rem 26.438rem 26.438rem 26.438rem 26.438rem;
+    grid-template-rows: 23.063rem 23.063rem;
+    grid-column-gap: 1.125rem;
+    grid-row-gap: 0.8rem;
+    grid-template-areas:
+    "vert_first small_first big_img big_img vert_sec"
+    "vert_first small_sec big_img big_img vert_sec";
+    .vert_first {
+        grid-area: vert_first;
+    }
+    .small_first {
+        grid-area: small_first;
+    }
+    .small_sec {
+        grid-area: small_sec;
+        width: 26.438rem;
+    }
+    .big_img {
+        grid-area: big_img;
+    }
+    .vert_sec {
+        grid-area: vert_sec;
+        width: 26.438rem;
+        height: 46.875rem;
+        object-fit: cover;
+    }
+}
+
+.center_trans {
+    justify-content: center;
+}

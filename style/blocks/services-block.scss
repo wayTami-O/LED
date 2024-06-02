@@ -1,0 +1,158 @@
+.services-block {
+    width: 100%;
+    height: 60.75rem;
+    @include mobile {
+        height: max-content;
+    }
+    .container_grid_services {
+        margin-top: 4rem;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 4rem;
+        // Adaptive
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
+        img {
+            @include mobile {
+                display: none;
+            }
+        }
+        .accordion_container {
+            display: flex;
+            flex-direction: column;
+            transition: all .2s ease-in;
+            hr {
+                width: 100%;
+                height: 0;
+                border: 0.125rem solid $bg-inverse-transparent-20;
+            }
+            .item_accordion {
+                cursor: pointer;
+                height: 100%;
+                max-height: 6rem;
+                overflow-y: hidden;
+                @include mobile {
+                    height: max-content;
+                    max-height: min-content;
+                    transition: max-height 5s ease;
+                    // Its to Active
+                    // &:hover {
+                    //     max-height: max-content !important;
+                    //     .visible_item {
+                    //         padding-bottom: 3rem;
+                    //     }
+                    //     .invisible_item {
+                    //         display: block;
+                    //         max-height: max-content;
+                    //         margin-bottom: 4rem;
+                    //     }
+                    // }
+                }
+                .visible_item {
+                    @include flex_js-SpaceBetween_ai-Center();
+                    padding-top: 2rem;
+                    padding-bottom: 2rem;
+                    @include mobile {
+                        padding-top: 3rem;
+                        padding-bottom: 3rem;
+                    }
+                    p {
+                        @include p();
+                        color: $bg-inverse;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 120%; 
+                        letter-spacing: -0.03rem;
+                    }
+                    svg {
+                        width: 100%;
+                        height: 100%;
+                        max-width: 2rem;
+                        max-height: 2rem;
+                        margin-right: 2.625rem;
+                        transition: transform .15s ease-out;
+                    }
+                }
+                .invisible_item {
+                    @include flex_column(); 
+                    justify-content: space-between;
+                    gap: 1.75rem;
+                    margin-bottom: 1.8rem;
+                    transition: transform .2s ease;
+                    @include mobile {
+                        display: none;
+                        // &:hover {
+                        //     display: flex;
+                        // }
+                    }
+                    img {
+                        display: none;
+                        @include mobile {
+                            display: block;
+                            margin-top: 3.75rem;
+                            border-radius: 4rem;
+                        }
+                    }
+                    p {
+                        @include description();
+                        width: 90%;
+                        color: $bg-inverse-transparent-60;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 120%;
+                    }
+                    button {
+                        @include description();
+                        width: min-content;
+                        padding: 1.125rem 1.875rem;
+                        border: 0.125rem solid $bg-terteriary;
+                        border-radius: 62.5rem;
+                        color: $bg-terteriary;
+                        background: transparent;
+                        transition: all .15s ease-in;
+                        // Adaptive 
+                        @include mobile {
+                            @include flex_jf-Center_ai-Center();
+                            width: 100%;
+                            margin-top: 4rem;
+                        }
+                        &:hover {
+                            padding: 1.125rem 1.875rem;
+                            border: 0.125rem solid $bg-primary-subdued-95;
+                            background-color: $bg-primary-subdued-95;
+                            color: $bg-inverse;
+                        }
+                    }
+                }
+                transition: max-height .5s ease;
+                &:hover {
+                    max-height: 17.875rem;
+                    .visible_item {
+                        svg {
+                            transform: rotate(-90deg);
+                        }
+                    }
+                }
+            }
+            .active_mobile {
+                @include mobile {
+                    max-height: max-content !important;
+                    .visible_item {
+                        padding-bottom: 3rem;
+                        transition: all .2s ease;
+                        svg {
+                            transform: rotate(-90deg) ;
+                        }
+                    }
+                    .invisible_item {
+                        display: block;
+                        max-height: max-content;
+                        margin-bottom: 4rem;
+                    }
+                }
+            }
+        }
+    }
+}
